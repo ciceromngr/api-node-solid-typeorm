@@ -1,5 +1,5 @@
 import { Users } from "../database/entities/Users";
-import { ICreateUserRequestDAO } from "../useCases/createUsers/DAO/CreateUsersDAO";
+import { ICreateUserRequestDAO } from "../useCases/users/createUsers/DAO/CreateUsersDAO";
 
 export interface ICreateUsersRepository {
     findOneUser(props: any): Promise<Users>

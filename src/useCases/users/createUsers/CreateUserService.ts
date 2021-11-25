@@ -1,7 +1,7 @@
 import { ICreateUserRequestDAO } from "./DAO/CreateUsersDAO";
 import * as yup from 'yup'
-import { Users } from "../../database/entities/Users";
-import { CreateUsersRepository } from "../../repositories/implementations/CreateUsersRepository";
+import { Users } from "../../../database/entities/Users";
+import { CreateUsersRepository } from "../../../repositories/implementations/CreateUsersRepository";
 import { getCustomRepository } from "typeorm";
 
 export class CreateUserService {

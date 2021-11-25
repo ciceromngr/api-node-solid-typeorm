@@ -1,6 +1,6 @@
 import { EntityRepository, Repository } from "typeorm";
 import { Users } from "../../database/entities/Users";
-import { ICreateUserRequestDAO } from "../../useCases/createUsers/DAO/CreateUsersDAO";
+import { ICreateUserRequestDAO } from "../../useCases/users/createUsers/DAO/CreateUsersDAO";
 import { ICreateUsersRepository } from "../ICreateUsersRepository";
 
 @EntityRepository(Users)
