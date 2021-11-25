@@ -4,12 +4,8 @@ import { ICreateUserRequestDAO } from "../../useCases/createUsers/DAO/CreateUser
 import { ICreateUsersRepository } from "../ICreateUsersRepository";
 
 @EntityRepository(Users)
-class UsersRepository extends Repository<Users> implements ICreateUsersRepository{
+class CreateUsersRepository extends Repository<Users> implements ICreateUsersRepository{
     
-    async findUsers(): Promise<any> {
-        return this.find()
-    }
-
     async findOneUser(props: any): Promise<Users> {
         return this.findOne(props)
     }
@@ -24,4 +20,4 @@ class UsersRepository extends Repository<Users> implements ICreateUsersRepositor
     
 }
 
-export { UsersRepository }
+export { CreateUsersRepository }

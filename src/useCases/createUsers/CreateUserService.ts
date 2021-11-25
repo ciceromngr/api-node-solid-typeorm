@@ -1,9 +1,7 @@
 import { ICreateUserRequestDAO } from "./DAO/CreateUsersDAO";
-import { ICreateUsersRepository } from '../../repositories/ICreateUsersRepository'
-
 import * as yup from 'yup'
 import { Users } from "../../database/entities/Users";
-import { UsersRepository } from "../../repositories/implementations/UsersRepository";
+import { CreateUsersRepository } from "../../repositories/implementations/CreateUsersRepository";
 import { getCustomRepository } from "typeorm";
 
 export class CreateUserService {
@@ -12,7 +10,7 @@ export class CreateUserService {
 
     async excecute(data: ICreateUserRequestDAO): Promise<Users> {
 
-        const userRepository = getCustomRepository(UsersRepository)
+        const userRepository = getCustomRepository(CreateUsersRepository)
 
         const schema = yup.object().shape({
             name: yup.string().required(),
@@ -29,8 +27,6 @@ export class CreateUserService {
         const user = await userRepository.created(data)
 
         await userRepository.saved(user)
-
-        delete user.password
 
         return user
 
